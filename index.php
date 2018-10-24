@@ -7,7 +7,7 @@ use app\src\model\dao\ProdutoDao;
 define("DIR", dirname(__FILE__));
 define("DS", DIRECTORY_SEPARATOR);
 
-include_once DIR . DS . 'app' . DS . 'src' . DS . 'Loader.php';
+include_once DIR . DS . 'app' . DS . 'src' . DS . 'loader.php';
 
 session_start();
 
