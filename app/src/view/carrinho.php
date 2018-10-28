@@ -14,7 +14,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h1 class="card-title">Carrinho</h1>
-                        <a class="btn btn-light" href="index.php">Home</a>
+                        <a class="btn btn-light" href="Controller.php?page=home">Home</a>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -41,7 +41,7 @@
                                     <tr>
                                         <td><?php echo $i; ?></td>
                                         <td><?php echo $item->getProduto()->getNome(); ?></td>
-                                        <td><form action="index.php?page=carrinho&action=alterarQuantidade" method="post">
+                                        <td><form action="Controller.php?page=carrinho&action=alterarQuantidade" method="post">
                                                 <input name="id" type="hidden" value="<?php echo $item->getId() ?>"/>
                                                 <input name="quantidade" type="text" style="width: 10%" value="<?php echo $item->getQuantidade() ?>"/>
                                                 <button type="submit" class="btn btn-primary btn-xs">Alterar</button>
@@ -50,7 +50,7 @@
                                                             $item->getProduto()->getPreco() : 0, 2, ",", "."); ?></td>
                                         <td><?php echo 'R$ ' . number_format($item->getSubTotal() != null ?
                                                             $item->getSubTotal() : 0, 2, ",", "."); $i++;?></td>
-                                        <td><form action="index.php?page=carrinho&action=excluir" method="post">
+                                        <td><form action="Controller.php?page=carrinho&action=excluir" method="post">
                                                 <input name="id" type="hidden" value="<?php echo $item->getId() ?>"/>
                                                 <button type="submit" class="btn btn-danger">Excluir</button>
                                             </form>

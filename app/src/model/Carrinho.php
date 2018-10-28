@@ -2,11 +2,15 @@
 
 namespace app\src\model;
 
+require __DIR__.'/../model/entidades/Item.php';
+
 class Carrinho {
 
     private $itens;
     private $produtoDao;
 
+    //Verifica se o carrinho está na sessão. Se estiver, deserializa o objeto
+    //Senão, cria um novo
     function __construct() {
         if (isset($_SESSION['carrinho'])) {
             $this->itens = unserialize($_SESSION['carrinho']);
@@ -16,6 +20,7 @@ class Carrinho {
         $this->produtoDao = new dao\ProdutoDao();
     }
 
+    //Guarda o carrinho da sessão quando o objeto sair da memória
     public function __destruct() {
         $_SESSION['carrinho'] = serialize($this->itens);
     }
@@ -23,7 +28,7 @@ class Carrinho {
     public function adicionarItem($id) {
         $produto = $this->produtoDao->load($id);
         if ($produto != null) {
-            $item = new entidades\Item(count($this->itens) + 1, $produto, 1);
+            $item = new \app\src\model\entidades\Item(count($this->itens) + 1, $produto, 1);
             array_push($this->itens, $item);
         }
     }

@@ -15,7 +15,7 @@
                     <div class="card-body">
                         <div>
                             <h1 class="card-title">Produtos</h1>
-                            <a href="index.php?page=carrinho" class="btn btn-primary">Consultar Carrinho</a>
+                            <a href="Controller.php?page=carrinho" class="btn btn-primary">Consultar Carrinho</a>
                         </div>
                         <table class="table">
                             <thead>
@@ -40,7 +40,7 @@
                                             ?>
                                         </td>
                                         <td>
-                                            <form action="index.php?page=carrinho&action=adicionar" method="post">
+                                            <form action="Controller.php?page=carrinho&action=adicionar" method="post">
                                                 <input type="hidden" name="id" value="<?php echo $item->getId() ?>"/>
                                                 <button type="submit" 
                                                         style="width: 100%" 

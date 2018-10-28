@@ -2,18 +2,18 @@
 
 namespace app\src\model\dao;
 
-use app\src\base\Dao;
-use app\src\model\entidades\Produto;
+require(__DIR__.'/../../base/Dao.php');
+require(__DIR__.'/../entidades/Produto.php');
 
-class ProdutoDao implements Dao{
+class ProdutoDao implements \app\src\base\Dao{
 
     private $produtos;
 
     public function __construct(){
-        $this->produtos = array(new Produto(1, 'Computador', 2000.0),
-                                new Produto(2, 'Tablet', 2300.0),
-                                new Produto(3, 'TV-Android', 800.0),
-                                new Produto(4, 'Pendrive USB 16GB', 30.0));
+        $this->produtos = array(new \app\src\model\entidades\Produto(1, 'Computador', 2000.0),
+                                new \app\src\model\entidades\Produto(2, 'Tablet', 2300.0),
+                                new \app\src\model\entidades\Produto(3, 'TV-Android', 800.0),
+                                new \app\src\model\entidades\Produto(4, 'Pendrive USB 16GB', 30.0));
     }
 
     public function getAll(){
