@@ -2,7 +2,6 @@
 
 namespace app\src\controller;
 
-require_once '../Loader.php';
 require_once '../model/dao/ProdutoDao.php';
 require_once '../model/Carrinho.php';
 
